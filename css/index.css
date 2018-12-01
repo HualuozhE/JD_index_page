@@ -127,15 +127,15 @@
 }
 
 /*轮播图部分*/
-#screen {
+.jd-inc2-screen ul {
     width: 2000px;
 }
 
-#screen li {
+.jd-inc2-screen ul li {
     float: left;
 }
 
-#arrow {
+.jd-inner-col2 .arrow {
     display: none;
 }
 
