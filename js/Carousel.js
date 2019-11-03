@@ -8,8 +8,8 @@
 *
 * QQ: 540776612
 *
-* Version: 1.200
-* Update-time: 2018年12月1日11:00:33
+* Version: 1.3
+* Update-time: 2019年11月3日20:16:02
 *
 * !!!===Help Document:
 *
@@ -83,7 +83,10 @@
         this.index = 0;
 
         //动画回调函数
-        this.aniCallBack = {}
+        this.aniCallBack = {
+            // 默认可点击
+            click: true
+        }
     }
 
     //Carousel构造函数暴露给Window对象
@@ -114,6 +117,7 @@
         }
         ulObj.addEventListener("transitionend", function (e) {
             this.style.transition = "none";
+            that.aniCallBack.click = true;
             that.aniCallBack.ff && that.aniCallBack.ff();
         }, false);
 
@@ -178,6 +182,10 @@
         var olObj = this.olObj;
         var ulObj = this.ulObj;
         var imgWidth = this.imgWidth;
+
+        if (!this.aniCallBack.click) return false;
+
+        this.aniCallBack.click = false
 
         if (this.index === this.maxindex) {
             this.index = 0;
