@@ -211,6 +211,10 @@
         var ulObj = this.ulObj;
         var imgWidth = this.imgWidth;
         var that = this;
+        
+        if (!this.aniCallBack.click) return false;
+
+        this.aniCallBack.click = false
 
         if (this.index === 0) {
             this.index = this.maxindex;
